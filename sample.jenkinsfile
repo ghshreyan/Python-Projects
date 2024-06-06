@@ -12,7 +12,7 @@ pipeline{
         stage("Checkout"){
             steps{
             // Checkout source code from version control  (Ex - Git) 
-            git url: 'https://github.com/ghshreyan/Python-Projects.git'
+            git branch: 'dev', url: 'https://github.com/ghshreyan/Python-Projects.git'
             }
             }
 
