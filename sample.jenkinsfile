@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    
+
     environment{
         // Define environment variables / parameters
         MY_ENV_VAR = 'some_value'
@@ -50,5 +50,4 @@ pipeline{
             echo "========pipeline execution failed========"
         }
     }
-}
 }
