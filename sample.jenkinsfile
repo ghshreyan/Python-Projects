@@ -1,17 +1,16 @@
 pipeline{
     agent{
-        node {
-            label: 'any'
-        }
+        node ('any'){
+
     }
     environment{
-        // Define environment variables / parameters 
+        // Define environment variables / parameters
         MY_ENV_VAR = 'some_value'
     }
     stages{
         stage("Checkout"){
             steps{
-            // Checkout source code from version control  (Ex - Git) 
+            // Checkout source code from version control  (Ex - Git)
             git branch: 'dev', url: 'https://github.com/ghshreyan/Python-Projects.git'
             }
             }
