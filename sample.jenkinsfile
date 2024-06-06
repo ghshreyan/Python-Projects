@@ -1,0 +1,57 @@
+pipeline{
+    agent{
+        node {
+            label: 'any'
+        }
+    }
+    environment{
+        // Define environment variables / parameters 
+        MY_ENV_VAR = 'some_value'
+    }
+    stages{
+        stage("Checkout"){
+            steps{
+            // Checkout source code from version control  (Ex - Git) 
+            git url: 'https://github.com/ghshreyan/Python-Projects.git'
+            }
+            }
+
+        stage("Build"){
+            steps {
+            // Build the application here (Ex - compile, package, etc)
+            sh '''
+            ls
+            echo "In Build Step"
+            '''
+            }
+        }
+
+        stage("Test"){
+            steps {
+            // Run  the tests the application here (Ex - Unit test, integration test)
+            sh 'echo "In Test Step"'
+            }
+        }
+
+        stage("Deploy"){
+            steps {
+            // Deploy the application to a target environment (Ex - staging, production)
+            sh 'echo "Value of ENV variable is "$MY_ENV_VAR""'
+            }
+        }
+
+        }
+    post{
+        always{
+            echo "========always========"
+        }
+        success{
+            // Action to perform when the pipeline is successful
+            echo "========pipeline executed successfully ========"
+        }
+        failure{
+            // Action to perform when the pipeline fails
+            echo "========pipeline execution failed========"
+        }
+    }
+}
