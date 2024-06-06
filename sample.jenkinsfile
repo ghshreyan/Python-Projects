@@ -19,7 +19,6 @@ pipeline{
             steps {
             // Build the application here (Ex - compile, package, etc)
             sh '''
-            ls
             echo "In Build Step"
             '''
             }
