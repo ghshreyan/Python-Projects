@@ -18,7 +18,7 @@ pipeline{
                 }
                 stage("Unit Test"){
                     steps{
-                        dir('./java-tomcat-sample'){
+                        dir('./maven-project/MySampleMavenProject'){
                         sh '''
                         echo "Executing unit tests..."
                         mvn test
