@@ -18,8 +18,9 @@ pipeline{
                 }
                 stage("Unit Test"){
                     steps{
-                        sudo -i
-                        dir('/root/maven-project/MySampleMavenProject'){
+//                         sudo -i
+//                         dir('/root/maven-project/MySampleMavenProject')
+                        {
                         sh '''
                         echo "Executing unit tests..."
                         sudo mvn test
